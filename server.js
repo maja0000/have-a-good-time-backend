@@ -3,9 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-app.use(cors());
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // import posts
 const ideas = require('./routes/api/ideas');
