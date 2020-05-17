@@ -10,5 +10,9 @@ const IdeaSchema = new Schema({
     type: String,
     required: true,
   },
+  likes: {
+    type: Number,
+  },
+  creation: { type: Date, default: Date.now },
 });
 module.exports = Idea = mongoose.model('idea', IdeaSchema);
