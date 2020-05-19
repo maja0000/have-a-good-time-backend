@@ -12,10 +12,12 @@ router.get('/', (req, res) => {
 });
 
 // post - create a new idea
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   const data = req.body;
-  const newIdea = new Idea(data);
-  newIdea.save().then((idea) => res.json(idea));
+  await Idea.create(data);
+  await Idea.find().then((idea) => {
+    res.json(idea);
+  });
 });
 // get by id
 
